@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Index Page</title>
+  </head>
+  <body>
+    <h1>Welcome to the Index Page</h1>
+    <p>Click the buttons below to watch the videos.</p>
+
+    <!-- Container for video links -->
+    <div id="videoLinks"></div>
+
+    <script>
+      // Function to generate video links
+      function generateVideoLink(videoFilename, videoTitle) {
+        var encodedFilename = encodeURIComponent(videoFilename);
+        var link =
+          '<a href="video.html?video=' +
+          encodedFilename +
+          '">' +
+          videoTitle +
+          "</a>";
+        return link;
+      }
+
+      // Add video links to the container
+      var videoLinksContainer = document.getElementById("videoLinks");
+      videoLinksContainer.innerHTML +=
+        generateVideoLink("2022-12-14 19-49-19.mp4", "Watch Video 1") + "<br>";
+      videoLinksContainer.innerHTML +=
+        generateVideoLink("2023-03-11 17-53-49-3.mp4", "Watch Video 2") +
+        "<br>";
+      videoLinksContainer.innerHTML += generateVideoLink(
+        "x2mate.com-Because… I Love You!!☺️❤️.mp4",
+        "Watch Video 3"
+      );
+    </script>
+  </body>
+</html>

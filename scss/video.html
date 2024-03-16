@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Video Player</title>
+  </head>
+  <body>
+    <h1>Video Player</h1>
+
+    <!-- Video Player with autoplay -->
+    <video id="videoPlayer" controls autoplay>
+      <!-- Source will be set dynamically with JavaScript -->
+      Your browser does not support the video tag.
+    </video>
+
+    <script>
+      // JavaScript to determine which video to play based on URL parameters
+      const params = new URLSearchParams(window.location.search);
+      const videoFilename = params.get("video");
+
+      if (videoFilename) {
+        // Set the source of the video player
+        document.getElementById("videoPlayer").src = "vid/" + videoFilename;
+      } else {
+        // If no valid video parameter is provided, display an error message
+        alert("Invalid video identifier");
+      }
+    </script>
+  </body>
+</html>

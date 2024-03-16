@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="bootstrap-5.3.3-dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="register.css" />
+    <link
+      rel="icon"
+      href="img/translogo.png"
+      type="image/x-icon"
+      sizes="16x16"
+    />
+    <title>CineFlix | Sign In /Sign Up</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark py-3">
+      <div class="container d-flex justify-content-between align-items-center">
+        <a href="index.html" class="navbar-brand">
+          <h3 class="nice fw-bold px-4 py-1 fs-4">CINEFLIX</h3>
+        </a>
+        <div class="d-flex align-items-center">
+          <div class="custom-select me-3">
+            <select id="language-select">
+              <option value="en">🇺🇸 English</option>
+              <option value="fr">🇫🇷 Français</option>
+              <option value="kr">🇰🇷 한국어</option>
+              <option value="jp">🇯🇵 日本語</option>
+              <!-- Add more language options as needed -->
+            </select>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="cont">
+      <div class="form sign-in">
+        <h2>Welcome back,</h2>
+        <label>
+          <span>Email</span>
+          <input type="email" id="email" required />
+          <!-- Add id attribute to identify the email input -->
+        </label>
+        <label>
+          <span>Password</span>
+          <input type="password" id="password" required />
+          <!-- Add id attribute to identify the password input -->
+        </label>
+        <a href="#"><p class="forgot-pass">Forgot password?</p></a>
+        <button
+          type="button"
+          class="submit css-button-shadow--blue"
+          onclick="signIn()"
+        >
+          Sign In
+        </button>
+        <a href="https://discord.gg/hCXfNAVV">
+          <button type="button" class="fb-btn">
+            Join to our <span>Discord</span>
+          </button>
+        </a>
+      </div>
+      <div class="sub-cont">
+        <div class="img">
+          <div class="img__text m--up">
+            <h2
+              class="translate"
+              data-en="New here?"
+              data-fr="Nouveau ici ?"
+              data-kr="여기 새로 오셨나요?"
+              data-jp="こちらは初めてですか？"
+            >
+              New here?
+            </h2>
+            <p
+              class="translate"
+              data-en="Sign up and discover great amount of new opportunities!"
+              data-fr="Inscrivez-vous et découvrez une grande quantité de nouvelles opportunités !"
+              data-kr="가입하고 새로운 기회를 발견하세요!"
+              data-jp="サインアップして、たくさんの新しい機会を見つけよう！"
+            >
+              Sign up and discover great amount of new opportunities!
+            </p>
+          </div>
+          <div class="img__text m--in">
+            <h2
+              class="translate"
+              data-en="One of us?"
+              data-fr="Un de nous ?"
+              data-kr="우리 중 한 명이니?"
+              data-jp="私たちの一員ですか？"
+            >
+              One of us?
+            </h2>
+            <p
+              class="translate"
+              data-en="If you already have an account, just sign in. We've missed you!"
+              data-fr="Si vous avez déjà un compte, connectez-vous simplement. Vous nous avez manqué !"
+              data-kr="이미 계정이 있으시면 로그인하세요. 그동안 그리웠어요!"
+              data-jp="すでにアカウントをお持ちの場合は、ログインしてください。お待ちしておりました！"
+            >
+              If you already has an account, just sign in. We've missed you!"
+            </p>
+          </div>
+          <div class="img__btn">
+            <span class="m--up">Sign Up</span>
+            <span class="m--in">Sign In</span>
+          </div>
+        </div>
+        <!-- -------------------------------sign-up -->
+        <div class="form sign-up">
+          <h2>Time to feel like home,</h2>
+          <label>
+            <span>Name</span>
+            <input type="text" required />
+          </label>
+          <label>
+            <span>Email</span>
+            <input id="signup-email" type="email" required />
+          </label>
+          <label>
+            <span>Password</span>
+            <input id="signup-password" type="password" required />
+          </label>
+          <button
+            type="button"
+            class="submit css-button-shadow--blue"
+            onclick="signUp()"
+          >
+            Sign Up
+          </button>
+          <button type="button" class="fb-btn">
+            Join to our <span>Discord</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <section class="form-hide">
+      <div class="main">
+        <input type="checkbox" id="chk" aria-hidden="true" />
+        <div class="signup">
+          <form>
+            <label class="signup-label nani" for="chk" aria-hidden="true"
+              >Sign up</label
+            >
+            <input
+              class="wait"
+              type="text"
+              name="username"
+              placeholder="Username"
+              required=""
+            />
+            <input
+              class="wait signup-email1"
+              type="email"
+              placeholder="Email = user@gmail.com"
+              required=""
+            />
+            <input
+              class="wait signup-password1"
+              type="password"
+              name="password"
+              placeholder="Password = 123456"
+              required=""
+            />
+            <button class="css-button-shadow--blue" onclick="signUup()">
+              Sign up
+            </button>
+          </form>
+        </div>
+        <div class="login">
+          <form>
+            <label class="signup-label wat" for="chk" aria-hidden="true"
+              >Login</label
+            >
+            <input
+              class="wait login-email"
+              type="email"
+              name="email"
+              placeholder="Email"
+              required=""
+            />
+            <input
+              class="wait login-password"
+              type="password"
+              name="password"
+              placeholder="Password"
+              required=""
+            />
+            <a href="#"><p class="forgot-pass">Forgot password?</p></a>
+            <button
+              type="button"
+              class="css-button-shadow--blue"
+              onclick="login()"
+            >
+              Login
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <div class="col-md-12 text-center">
+      <p id="res">
+        2024 <span class="copy">©</span> CineFlix. All Rights Reserved.
+      </p>
+    </div>
+    <script src="register.js"></script>
+    <script src="bootstrap-5.3.3-dist/js/bootstrap.js"></script>
+
+    <script>
+      // Validation Code For Inputs
+      var email = document.getElementById("signup-email");
+      var password = document.getElementById("signup-password");
+
+      var email_error = document.getElementById("email_error");
+      var pass_error = document.getElementById("pass_error");
+
+      email.addEventListener("input", email_Verify);
+      password.addEventListener("input", pass_Verify);
+
+      var signUpEmail;
+      var signUpPassword;
+
+      function signUp() {
+        if (!validated()) {
+          alert("Please fill in all the fields.");
+          return;
+        }
+
+        signUpEmail = email.value;
+        signUpPassword = password.value;
+
+        alert("You have been signed up successfully!");
+      }
+
+      function signIn() {
+        var signInEmail = document.getElementById("email").value; // Fetch sign-in email input
+        var signInPassword = document.getElementById("password").value; // Fetch sign-in password input
+
+        // Perform login validation here
+        // For demonstration purposes, let's assume some hardcoded credentials
+        var validEmail = signUpEmail; // Using the email from signup
+        var validPassword = signUpPassword; // Using the password from signup
+
+        if (signInEmail === validEmail && signInPassword === validPassword) {
+          alert("Sign In Successful!");
+          window.location.href = "home.html"; // Redirect to the home page
+        } else {
+          alert("Invalid email or password. Please try again.");
+        }
+      }
+
+      function validated() {
+        if (email.value.length < 1 || password.value.length < 1) {
+          return false;
+        }
+        if (email.value.length < 9) {
+          email.style.border = "1px solid red";
+          email_error.style.display = "block";
+          email.focus();
+          return false;
+        }
+        if (password.value.length < 6) {
+          password.style.border = "1px solid red";
+          pass_error.style.display = "block";
+          password.focus();
+          return false;
+        }
+        return true;
+      }
+
+      function email_Verify() {
+        if (email.value.length >= 8) {
+          email.style.border = "1px solid silver";
+          email_error.style.display = "none";
+          return true;
+        }
+      }
+
+      function pass_Verify() {
+        if (password.value.length >= 5) {
+          password.style.border = "1px solid silver";
+          pass_error.style.display = "none";
+          return true;
+        }
+      }
+    </script>
+
+    <script>
+      function signUup() {
+        var signupEmail = document.querySelector(".signup-email1").value;
+        var signupPassword = document.querySelector(".signup-password1").value;
+
+        // Hardcoded validation
+        var hardcodedEmail = "user@gmail.com";
+        var hardcodedPassword = "123456";
+
+        if (
+          signupEmail === hardcodedEmail &&
+          signupPassword === hardcodedPassword
+        ) {
+          alert("You have been signed up successfully!");
+        } else {
+          alert("Sign up failed. Please try again.");
+        }
+      }
+
+      function login() {
+        var loginEmail = document.querySelector(".login-email").value;
+        var loginPassword = document.querySelector(".login-password").value;
+
+        // Hardcoded validation
+        var hardcodedEmail = "user@gmail.com";
+        var hardcodedPassword = "123456";
+
+        if (
+          loginEmail === hardcodedEmail &&
+          loginPassword === hardcodedPassword
+        ) {
+          alert("Sign In Successful!");
+          window.location.href = "home.html"; // Redirect to the home page
+        } else {
+          alert("Invalid email or password. Please try again.");
+        }
+      }
+    </script>
+  </body>
+</html>

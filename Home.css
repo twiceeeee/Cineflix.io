@@ -1,0 +1,773 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+
+/* dark mode */
+.darkmode {
+  background-color: #ffffff;
+}
+.darkmode-background {
+  background-color: black;
+}
+.sidebar-link:hover {
+  background-color: rgba(29, 27, 27, 0.075);
+}
+body {
+  color: #fffdfd; /* Change font color for both h3 and body */
+}
+
+h3 {
+  color: white; /* Explicitly set color for h3 */
+}
+
+.darkmode .card {
+  background-color: #3d3d3d;
+}
+.form-check {
+  cursor: pointer;
+}
+
+/* scrollbar */
+::-webkit-scrollbar {
+  width: 3px;
+  background-color: #050722;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #6ba5de;
+  border-radius: 6px;
+}
+
+.mt-4 {
+  margin-top: -1.5rem !important;
+}
+.dropdown-menu {
+  --bs-dropdown-link-hover-bg: #17518b;
+}
+.navbar-expand .navbar-nav .dropdown-menu {
+  background-color: #050722;
+}
+/* CSS */
+.progress-bar {
+  position: fixed;
+  top: 0;
+  width: 0;
+  height: 3px;
+  z-index: 9999;
+  background: linear-gradient(160deg, #2c7ea7 0%, #53b3e3 100%);
+  animation: progress 1s linear infinite;
+  border-radius: 5px;
+}
+
+.text {
+  padding: 10rem;
+}
+
+#res {
+  font-size: 10px;
+  color: white;
+}
+
+#res:hover {
+  color: transparent; /* Set text color to transparent */
+  background-image: linear-gradient(
+    45deg,
+    #ff0000,
+    #00ff00
+  ); /* Define linear gradient */
+  -webkit-background-clip: text; /* Apply background only to text */
+  background-clip: text; /* Apply background only to text */
+  cursor: url(img/_884ed672-76ef-4dce-998d-6e48aeb3c937.jpeg);
+}
+
+/* .carousel1-control-next,
+.carousel1-control-prev {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 5%;
+  padding: 0;
+  color: #fff;
+  text-align: center;
+  background: 0 0;
+  border: 0;
+  opacity: 0.5;
+  transition: opacity 0.15s ease;
+} */
+
+.dropdown-item {
+  display: block;
+  width: 100%;
+  padding: var(--bs-dropdown-item-padding-y) var(--bs-dropdown-item-padding-x);
+  clear: both;
+  font-weight: 400;
+  color: rgb(255, 255, 255);
+  text-align: inherit;
+  text-decoration: none;
+  white-space: nowrap;
+  background-color: transparent;
+  border: 0;
+  border-radius: var(--bs-dropdown-item-border-radius, 0);
+}
+
+.carousel-control-next,
+.carousel-control-prev {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 5%;
+  padding: 0;
+  color: #fff;
+  text-align: center;
+  background: 0 0;
+  border: 0;
+  opacity: 0.5;
+  transition: opacity 0.15s ease;
+}
+
+::after,
+::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.wrapper {
+  display: flex;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  transition: all 0.35s ease-in-out;
+  background-color: #ffffff;
+  min-width: 0;
+}
+
+.darkmode .navbar,
+.darkmode #sidebar {
+  background-color: #f8f9fa; /* Set light background color */
+}
+
+#sidebar {
+  width: 70px;
+  min-width: 70px;
+  z-index: 1000;
+  transition: all 0.25s ease-in-out;
+  background-color: #050722;
+  display: flex;
+  flex-direction: column;
+}
+
+#sidebar.expand {
+  width: 260px;
+  min-width: 190px;
+}
+
+.toggle-btn {
+  background-color: transparent;
+  cursor: pointer;
+  border: 0;
+  padding: 1rem 1.5rem;
+}
+
+.toggle-btn i {
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+.sidebar-logo {
+  margin: auto 0;
+}
+
+.sidebar-logo a {
+  color: #fff;
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+#sidebar:not(.expand) .sidebar-logo,
+#sidebar:not(.expand) a.sidebar-link span {
+  display: none;
+}
+
+#sidebar.expand .sidebar-logo,
+#sidebar.expand a.sidebar-link span {
+  animation: fadeIn 0.25s ease;
+}
+@media (max-width: 767px) {
+  #sidebar {
+    position: fixed;
+    top: 0;
+    left: -260px;
+    width: 260px;
+    height: 100%;
+    z-index: 1031;
+    background: #ffffff;
+    transition: all 2.3s ease-in-out;
+  }
+  #sidebar.active {
+    left: 0;
+  }
+}
+
+/* Media query to show sidebar on smaller screens */
+@media (max-width: 500px) {
+  .sidebar-nav {
+    display: block;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.sidebar-nav {
+  padding: 2rem 0;
+  flex: 1 1 auto;
+}
+
+a.sidebar-link {
+  padding: 0.625rem 1.625rem;
+  color: #fff;
+  display: block;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  border-left: 3px solid transparent;
+}
+
+.sidebar-link i,
+.dropdown-item i {
+  font-size: 1.1rem;
+  margin-right: 0.75rem;
+}
+
+a.sidebar-link:hover {
+  background-color: rgba(255, 255, 255, 0.075);
+  border-left: 3px solid #3b7ddd;
+}
+
+.sidebar-item {
+  position: relative;
+}
+
+#sidebar:not(.expand) .sidebar-item .sidebar-dropdown {
+  position: absolute;
+  top: 0;
+  left: 70px;
+  background-color: #050722;
+  padding: 0;
+  min-width: 15rem;
+  display: none;
+}
+
+#sidebar:not(.expand) .sidebar-item:hover .has-dropdown + .sidebar-dropdown {
+  display: block;
+  max-height: 15em;
+  width: 100%;
+  opacity: 1;
+}
+
+#sidebar.expand .sidebar-link[data-bs-toggle="collapse"].collapsed::after {
+  transform: rotate(45deg);
+  transition: all 0.2s ease-out;
+}
+
+.navbar {
+  background-color: #050722;
+  box-shadow: 0 0 2rem 0 rgba(33, 37, 41, 0.1);
+}
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000; /* Ensure it's above other content */
+  border-bottom: 1px solid #ddd; /* Example border */
+  width: 100%; /* Ensure it spans the full width */
+}
+
+/* Sticky navbar */
+.navbar.sticky-top {
+  position: sticky;
+  top: 0;
+  z-index: 1000; /* Adjust z-index as needed */
+  background-color: white; /* Optional: set background color */
+  /* Add other styling as needed */
+}
+
+.navbar-expand .navbar-collapse {
+  min-width: 200px;
+}
+
+.avatar {
+  height: 40px;
+  width: 40px;
+}
+
+.card {
+  background-color: #f5f5f5;
+  transform: 0.4s;
+  cursor: pointer;
+  color: #000;
+}
+
+.c-item {
+  height: 380px;
+}
+
+.c-img {
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.6);
+}
+
+/* card carousel */
+.carousel-inner {
+  padding: 0.5em;
+}
+
+.card {
+  border: 0;
+  border-radius: 0;
+  color: #fff;
+  box-shadow: 5px 5px 10px #e1e1e1;
+  padding: 3em 0;
+  border-bottom-right-radius: 4em;
+  border-top-left-radius: 4em;
+  background: linear-gradient(149deg, #192247 0%, #210e17 96.86%);
+  background-size: 200%;
+  background-position: right;
+  transition: background-position 0.5s ease-in-out;
+  position: relative;
+}
+.card-icon {
+  margin: 0 1em;
+}
+.card-icon i {
+  font-size: 3em;
+}
+.card:hover {
+  background-position: left;
+  background-image: url(img/solo.webp);
+  color: #ffffff;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.card:hover::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* GANTOOOOOOOOOO PALA MABOBO POTA  */
+  z-index: 1;
+}
+
+.card:hover {
+  color: #ffffff;
+}
+
+.card:hover::before {
+  animation: slideLeft 0.5s forwards; /* Add animation to pseudo-element */
+}
+@keyframes slideLeft {
+  0% {
+    width: 0;
+  }
+  100% {
+    border-bottom-right-radius: 4em;
+    border-top-left-radius: 4em;
+    width: 100%; /* Adjust the width to match the background-position adjustment */
+  }
+}
+
+/* Style for every second card */
+.col-md-4:nth-child(2n) .card:hover {
+  background-position: left;
+  background-image: url(img/one.jpe);
+  color: #ffffff;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.col-md-4:nth-child(2n) .card:hover::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.col-md-4:nth-child(2n) .card:hover {
+  color: #ffffff;
+}
+
+.col-md-4:nth-child(2n) .card:hover::before {
+  animation: slideLeft 0.5s forwards;
+}
+
+/* Style for every third card */
+.col-md-4:nth-child(3n) .card:hover {
+  background-position: left;
+  background-image: url(img/ball.jpe);
+  color: #ffffff;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.col-md-4:nth-child(3n) .card:hover::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+  animation: slideLeft 0.5s forwards; /* Apply animation */
+}
+
+@keyframes slideLeft {
+  0% {
+    width: 0;
+  }
+  100% {
+    border-bottom-right-radius: 4em;
+    border-top-left-radius: 4em;
+    width: 100%;
+  }
+}
+
+/* h1 thingy iba na ito sa multiple carousel na to with 2nd item namo wag ka malito dami mong codes kupal*/
+
+h1 {
+  margin-left: 130px;
+  font-size: 20px;
+}
+
+body {
+  background: #050722;
+  color: #000000;
+}
+
+#tophorror {
+  padding: 20px 0;
+}
+
+.box-area {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 4fr));
+  grid-gap: 10px;
+  margin-top: 10px;
+}
+
+.box {
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
+  background: linear-gradient(rgba(0, 0, 0, 0.9));
+  height: 250px;
+}
+
+.box img {
+  width: 100%;
+  height: 250px;
+  border-radius: 10px;
+  display: block;
+  transition: transform 0.5s;
+}
+
+.overlay {
+  width: 100%;
+  height: 0;
+  background: linear-gradient(transparent, #1c1c1c 58%);
+  border-radius: 10px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 40px;
+  text-align: center;
+  font-size: 14px;
+  transition: height 0.5s;
+}
+/* Set default font color for body and h3 */
+
+.overlay h3 {
+  font-weight: 500;
+  margin-bottom: 5px;
+  margin-top: 80%;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 30px;
+  letter-spacing: 2px;
+}
+
+.overlay a {
+  margin-top: 10px;
+  color: #262626;
+  text-decoration: none;
+  font-size: 14px;
+  background: #fff;
+  border-radius: 50px;
+  text-align: center;
+  padding: 5px 15px;
+}
+
+.box:hover img {
+  transform: scale(1.1);
+}
+
+.box:hover .overlay {
+  height: 100%;
+  cursor: pointer;
+}
+
+/* --------to top------------ */
+.to-top {
+  background: transparent;
+  position: fixed;
+  bottom: 16px;
+  right: 32px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  text-decoration: none;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.4s;
+}
+
+.to-top.active {
+  pointer-events: auto;
+  opacity: 1;
+}
+
+/* footer */
+
+footer {
+  background: rgb(21, 5, 69);
+  padding: 30px 0;
+}
+
+.imgs {
+  width: 100px;
+  height: 100px;
+}
+
+#sen {
+  font-size: 10px;
+}
+.single-content {
+  text-align: center;
+  padding: 115px 0;
+}
+.single-box p {
+  color: #fff;
+  line-height: 1.9;
+}
+.single-box h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+}
+.single-box .card-area i {
+  color: #ffffff;
+  font-size: 20px;
+  margin-right: 10px;
+}
+.single-box ul {
+  list-style: none;
+  padding: 0;
+}
+.single-box ul li a {
+  text-decoration: none;
+  color: #fff;
+  line-height: 2.5;
+  font-weight: 100;
+}
+.single-box h2 {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+}
+#basic-addon2 {
+  background: #fe1e4f;
+  color: #fff;
+}
+.socials i {
+  font-size: 18px;
+  margin-right: 15px;
+}
+
+/* sa taas ko tlga ilalagay keyframe kasi nasa baba footer eh gets? */
+@keyframes underline {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* fota naman footer */
+footer ul li a {
+  position: relative;
+  text-decoration: none;
+  color: inherit;
+}
+
+/*edi wow na lng tlga sa animation*/
+footer ul li a::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #2118cb;
+  transition: width 0.3s ease;
+}
+
+/* hover effect ata to for the underline panis taglish*/
+footer ul li a:hover::after {
+  animation: underline 0.3s forwards;
+}
+
+.socials {
+  color: white;
+}
+
+.socials .fa:hover {
+  color: #17518b;
+  cursor: pointer;
+}
+.moon {
+  color: yellow;
+}
+
+body {
+  transition: background-color 0.5s ease;
+}
+
+label {
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.moon {
+  position: absolute;
+  font-size: 1.1em;
+  color: #616321;
+  filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.5));
+  transform: scale(0);
+  transition: 1s ease;
+}
+
+input:checked ~ .moon {
+  transition-delay: 0.8s;
+  transform: scale(1) rotate(360deg);
+}
+.sun {
+  font-size: 1.1em;
+  color: #fffb00;
+  filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.5));
+  transition: 1s ease;
+}
+
+input:checked ~ .sun {
+  transform: rotate(360deg) scale(0);
+}
+
+.nani {
+  position: absolute;
+  opacity: 0;
+}
+.person {
+  width: 25px;
+  height: 25px;
+  color: rgb(255, 255, 255);
+}
+@media (prefers-color-scheme: dark) {
+  /* Color for dark mode */
+  .darkmode .person {
+    color: rgb(0, 0, 0);
+  }
+}
+.copy {
+  font-size: 15px;
+}
+
+.sec1 {
+  margin-top: 200px;
+  background-image: url(img/black.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 0.5em;
+}
+#searchForm {
+  height: 25px;
+  margin-bottom: 7px;
+}
+.to-top {
+  position: fixed;
+  bottom: 16px;
+  right: 32px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  color: #1815de;
+  text-decoration: none;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.4s;
+}
+
+.to-top.active {
+  bottom: 32px;
+  pointer-events: auto;
+  opacity: 1;
+}
